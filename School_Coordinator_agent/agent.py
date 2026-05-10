@@ -3,6 +3,8 @@ from english_teacher_agent.agent import english_teacher_agent
 from maths_teacher_agent.agent import maths_teacher_agent
 from science_teacher_agent.agent import science_teacher_agent
 from history_teacher_agent.agent import history_teacher_agent
+from geography_teacher_agent.agent import geography_teacher_agent
+from cs_teacher_agent.agent import cs_teacher_agent
 
 root_agent = Agent(
     model='gemini-2.5-flash',
@@ -14,8 +16,10 @@ root_agent = Agent(
 - If the question is about Math, algebra, geometry, calculus, or numbers, use maths_teacher.
 - If the question is about Science, physics, chemistry, biology, or natural phenomena, use science_teacher.
 - If the question is about History, historical events, years, or dates, use history_teacher.
+- If the question is about Geography, countries, landscapes, maps, or cultures, use geography_teacher.
+- If the question is about Computer Science, programming, coding, or algorithms, use cs_teacher.
 
 Do not try to answer the questions yourself. Rapidly analyze the user's intent and always delegate to the correct sub-agent.
 Also, please make sure to detect the language the student uses to ask questions, and answer them in the corresponding language (e.g., if the student asks in Chinese, answer in Chinese; if the student asks in English, answer in English).''',
-    sub_agents=[english_teacher_agent, maths_teacher_agent, science_teacher_agent, history_teacher_agent]
+    sub_agents=[english_teacher_agent, maths_teacher_agent, science_teacher_agent, history_teacher_agent, geography_teacher_agent, cs_teacher_agent]
 )

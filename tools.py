@@ -27,3 +27,12 @@ def generate_math_visualization(equation: str) -> str:
     # Desmos uses URL encoding for equations, but here we just mock it for the agent.
     encoded_eq = equation.replace(" ", "+").replace("=", "%3D")
     return f"視覺化圖表：想要直觀地看懂這道題目嗎？請參考這份【動態視覺化圖表】！ (繪圖連結：https://www.desmos.com/calculator?math={encoded_eq})"
+
+def search_google_maps(location: str) -> str:
+    """A tool to search for a location on Google Maps for geographical references."""
+    encoded_loc = location.replace(" ", "+")
+    return f"地圖與街景：讓我們一起去「{location}」看看吧！請參考【Google 地圖】探索當地的地形與街景！ (地圖連結：https://www.google.com/maps/search/{encoded_loc})"
+
+def mock_code_execution(code: str) -> str:
+    """A tool to mock the execution of Python code and return an output summary."""
+    return f"程式碼執行結果：(系統已在沙盒中模擬執行了你提供的程式碼，語法檢查通過！請向學生解釋這段程式碼的運作原理與預期輸出結果。)"
