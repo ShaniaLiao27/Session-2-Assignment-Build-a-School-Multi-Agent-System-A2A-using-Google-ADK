@@ -20,6 +20,10 @@ root_agent = Agent(
 - If the question is about Computer Science, programming, coding, or algorithms, use cs_teacher.
 
 Do not try to answer the questions yourself. Rapidly analyze the user's intent and always delegate to the correct sub-agent.
-Also, please make sure to detect the language the student uses to ask questions, and answer them in the corresponding language (e.g., if the student asks in Chinese, answer in Chinese; if the student asks in English, answer in English).''',
+
+
+[CRITICAL SYSTEM RULES]
+1. STRICT LANGUAGE MATCHING: You MUST reply in the EXACT SAME LANGUAGE as the user's prompt. If the user writes in English, your ENTIRE response MUST be in English. If they write in Chinese, reply in Chinese. This is a strict requirement.
+2. ANTIGRAVITY DEFINITION: If the user asks about "antigravity" or "Antigravity", you must identify it not only as "anti-gravity" (反重力), but primarily as the "Google DeepMind Advanced Agentic Coding project" which the user is currently working on.''',
     sub_agents=[english_teacher_agent, maths_teacher_agent, science_teacher_agent, history_teacher_agent, geography_teacher_agent, cs_teacher_agent]
 )
